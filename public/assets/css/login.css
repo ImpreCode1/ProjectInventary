@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left {
+      flex: 1;
+      background: url("https://img.freepik.com/vector-gratis/cinta-transportadora-ilustracion-concepto-almacen_114360-15026.jpg?w=740&t=st=1726168401~exp=1726169001~hmac=db49527953ee87d7f23e98d486fc894e6053626ddbae9f7c17f9dfb51d108f13") no-repeat center center;
+      background-size: cover;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      max-width: 400px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6b21a8;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button[type="submit"] {
+      background-color: #6b21a8;
+      color: #fff;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #4c1475;
+    }
+
+    .create-account {
+      text-align: center;
+      color: #777;
+      margin-top: 20px;
+    }
+
+    .create-account a {
+      color: #6b21a8;
+      text-decoration: none;
+    }
+
+    .create-account a:hover {
+      text-decoration: underline;
+    }
+
+    .form-e{
+      /* border: 5px red; */
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      color:#da2b2b;
+      max-width:250
+  
+    }
+  
+    /* .form-d{
+      position: absolute;
+      bottom: -29px;
+      left: 0;
+      color:#da2b2b;
+      max-width:250
+    } */
+
+    .form-inp {
+      padding: 11px 25px;
+      margin-bottom: 20px;
+      background: 0 0;
+      border: 1px solid #e3e3e3;
+      line-height: 1;
+      border-radius: 8px;
+      position: relative;
+      margin-bottom: 2
+  }
+  .form-inp:focus {
+      border: 1px solid
+  }
+  .form-inp:first-child {
+      margin-bottom: 15px
+  }
+  .form-inp input {
+      width: 100%;
+      background: 0 0;
+      gap: 50px;
+      font-size: 13.4px;
+      color: #fff;
+      border: none;
+      padding: 0;
+      margin: 0
+  }
+
+  .form-inp input:focus {
+    outline: 0
+  }
+
+
+  .password-toggle-icon{position:absolute;top:50%;right:10px;transform:translateY(-50%);cursor:pointer;color:#888}

@@ -1,0 +1,851 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: #f8f9fa;
+    color: #333;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* padding: 30px; */
+    justify-content: center;
+    border-radius: 20px;
+
+}
+
+.top-container {
+    display: flex;
+    flex: 2;
+    margin-bottom: 15px;
+}
+
+.top-left,
+.top-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.top-left {
+    /* background-image: url('https://img.freepik.com/fotos-premium/tienda-mercado-productos-mercado-mercancias-bodega-supermercado-escaparate-compras-dispensario_450634-1483.jpg?w=740'); */
+    background-color: black;
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* .top-left h1 {
+    font-size: 3rem;
+    font-family: 'Playwrite NL', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 10px;
+    border-radius: 12px;
+    color: #ffffff;
+} */
+
+
+/* icono de agregar */
+.walletBalanceCard {
+    width: fit-content;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 0px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.svgwrapper {
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svgwrapper svg {
+    width: 100%;
+}
+
+.balancewrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 120px;
+    gap: 0px;
+}
+
+.balanceHeading {
+    font-size: 8px;
+    color: #1d1c1c;
+    font-weight: 100;
+    letter-spacing: 0.6px;
+}
+
+.balance {
+    font-size: 13.5px;
+    color: #363636;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.addmoney {
+    padding: 1px 15px;
+    border-radius: 20px;
+    background-color: hsl(103, 60%, 54%);
+    color: white;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.addmoney:hover {
+    background-color: whitesmoke;
+    color: hsl(0, 0%, 0%);
+}
+
+.plussign {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .bottom-container {
+    margin-bottom: 35px;
+    border: 2px solid black;
+} */
+
+
+/* Estilo de carta  */
+.container-card {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 17px;
+    padding: 17px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* * {
+    box-sizing: border-box;
+} */
+
+svg {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.product-card-container {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 1.5s ease;
+}
+
+
+
+.product-card {
+    /* font-family: 'Roboto', sans-serif; */
+    width: 320px;
+    /* height: auto; */
+    border-radius: 8px;
+    box-shadow: 0 7px 25px -10px rgba(0, 0, 0, 0.33);
+    overflow: hidden;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    color: #333;
+    /* overflow: hidden; */
+}
+
+.product-card.hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.product-card,
+.product-card * {
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+}
+
+.product-card .product-card-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.product-card:hover .product-card-img {
+    height: 240px;
+    /*transform: scale(1.5);*/
+}
+
+
+.product-card-img:hover {
+    transform: scale(1.5);
+}
+
+.product-card:hover .product-card-details {
+    padding-bottom: 80px;
+}
+
+.product-card .product-name-price {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(rgba(0, 0, 0, 0.025), transparent);
+}
+
+
+.product-card .product-view,
+.product-card .product-desc {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(rgba(0, 0, 0, 0.025), transparent);
+}
+
+.product-card .product-view {
+    font: 14px;
+    display: flex;
+    flex-direction: column;
+    color: #777;
+}
+
+.category-list {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.product-badge,
+.category-list div {
+    background-color: hwb(178 87% 4%);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 8px;
+}
+
+.view-ico {
+    display: inline-block;
+}
+
+.view-similar {
+    display: inline;
+    background-color: #d1d2d6;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    padding: 0.3rem !important;
+}
+
+/*** Product Details Styling ***/
+
+.product-card  .product-name {
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+.product-card .product-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    float: right;
+    color: #2ecc71;
+}
+
+.product-card .product-prices {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    float: right;
+    color: hsl(0, 76%, 56%);
+}
+
+.product-card .product-wish-addtocart {
+    /* border: solid 2px black; */
+    position: absolute;
+    bottom: -90px;
+    right: 0;
+    left: 0;
+}
+
+
+.product-card:hover .product-wish-addtocart {
+    bottom: 1.1rem;
+}
+
+.product-card .product-wish-addtocart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card .product-wish-addtocart .addtocart-btn {
+    border-radius: 30px 0 0 30px !important;
+}
+
+.product-card .product-wish-addtocart .wish-btn {
+    margin-left: 1.2rem;
+    width: 3rem;
+    height: 3rem;
+    padding: 1.6rem 1.6rem;
+    background-color: #eee;
+    color: #bbbbbb;
+    box-shadow: none;
+}
+
+.wish-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.wish-btn,
+button.addtocart-btn {
+    background: #2ecc71;
+    padding: 1rem 2.4rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600 !important;
+    font-size: 16px;
+    border-radius: 100px !important;
+    color: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.133);
+}
+
+.addtocart-btn:hover,
+.wish-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+button.wish-btn {
+    padding: 0.6rem !important;
+}
+
+/* filtrar  */
+.container-filter {
+    margin-right: 30px;
+    float: right;
+}
+
+/* this is a recreation of twitter search in css */
+.form {
+    --input-text-color: hsl(0, 0%, 0%);
+    --input-bg-color: #283542;
+    --focus-input-bg-color: transparent;
+    --text-color: #949faa;
+    --active-color: #1b9bee;
+    --width-of-input: 200px;
+    --inline-padding-of-input: 1.2em;
+    --gap: 0.9rem;
+  }
+  /* form style */
+  .form {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: var(--width-of-input);
+    position: relative;
+    isolation: isolate;
+  }
+  /* a fancy bg for showing background and border when focus. */
+  .fancy-bg {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background: var(--input-bg-color);
+    border-radius: 30px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  /* label styling */
+  label {
+    width: 100%;
+    padding: 0.8em;
+    height: 40px;
+    padding-inline: var(--inline-padding-of-input);
+    display: flex;
+    align-items: center;
+  }
+  
+  .search,.close-btn {
+    position: absolute;
+  }
+  /* styling search-icon */
+  .search {
+    fill: var(--text-color);
+    left: var(--inline-padding-of-input);
+  }
+  /* svg -- size */
+  svg {
+    width: 10px;
+    display: block;
+  }
+  /* styling of close button */
+  .close-btn {
+    border: none;
+    right: var(--inline-padding-of-input);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--active-color);
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* styling of input */
+  .input {
+    color: var(--input-text-color);
+    width: 100%;
+    margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+    background: none;
+    border: none;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: var(--text-color)
+  }
+  /* input background change in focus */
+  .input:focus ~ .fancy-bg {
+    border: 1px solid var(--active-color);
+    background: var(--focus-input-bg-color);
+  }
+  /* search icon color change in focus */
+  .input:focus ~ .search {
+    fill: var(--active-color);
+  }
+  /* showing close button when typing */
+  .input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+  }
+
+/* diseño modal  */
+.modal-container {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Agrega padding para evitar que el modal toque los bordes en pantallas pequeñas */
+}
+
+.modal {
+    width: 90%; /* Usa un porcentaje para que sea responsivo */
+    max-width: 600px; /* Limita el ancho máximo */
+    height: auto; /* Altura automática basada en el contenido */
+    max-height: 90vh; /* Limita la altura máxima al 90% del viewport */
+    background: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Cambiado de space-evenly a flex-start */
+    position: relative;
+    transition: transform 0.3s, opacity 0.3s; /* Transición más suave */
+    transform: translateY(0); /* Inicia desde la posición correcta */
+    border-radius: 10px;
+    overflow-y: auto; /* Permite scroll vertical si el contenido es muy largo */
+    padding: 20px; /* Agrega padding interno */
+}
+
+.modal-close {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: #c44a4a;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+        max-width: none;
+    }
+}
+
+
+.modal-content {
+    margin-top: 40px; /* Espacio para el botón de cierre  */
+    
+}
+
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* imagen */
+.imagen-preview {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: 2px dashed hsl(91, 82%, 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 0rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagen-preview img {
+    max-width: 120%;
+    max-height: 120%;
+    object-fit: cover;
+}
+
+/* estilo botones  */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px 15px; */
+    gap: 15px;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.button .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+}
+
+.button svg path {
+    transition: 400ms;
+}
+
+.button:hover {
+    background-color: transparent;
+}
+
+.button:hover .text {
+    color: #181717;
+}
+
+.button:hover svg path {
+    fill: #181717;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 35px;
+    /* border: 2px solid black; */
+}
+
+.walletBalanceCard {
+    display: flex;
+    align-items: center;
+}
+
+.svgwrapper {
+    margin-right: 10px;
+}
+
+.balancewrapper {
+    margin-right: 15px;
+}
+
+.addmoney {
+    padding: 8px 15px;
+    background-color: hsl(113, 70%, 57%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+} 
+
+.plussign {
+    margin-right: 5px;
+} 
+
+.container-filter {
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.form {
+    width: 100%;
+} 
+
+.input {
+    width: 100%;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+}
+
+
+.product-card .product-descripcion {
+    /* border: 2px solid black; */
+    /* margin-left: 30px; */
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #555;
+    text-align: left;  
+    display: block;      
+    margin: 10px 0;    
+    padding: 1.5rem;
+    justify-content: space-between;  
+}
+
+
+.btn {
+
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    /* border: solid 2px black; */
+    margin-left: 18px;
+
+  }
+  
+  .btn::after {
+    content: 'Eliminar';
+    position: absolute;
+    top: -130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(168, 7, 7);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: .2s linear;
+    transition-delay: .2s;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .icon {
+    transform: scale(1.2);
+    transition: .2s linear;
+  }
+  
+  .btn:hover > .icon {
+    transform: scale(1.5);
+  }
+  
+  .btn:hover > .icon path {
+    fill: rgb(168, 7, 7);
+  }
+  
+  .btn:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: -160%;
+  }
+  
+
+
+  /* botones  */
+  .custom-alert-buttons {
+    margin-top: 20px;
+}
+
+.custom-confirm-yes,
+.custom-confirm-cancel {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-confirm-yes {
+    background-color: hwb(145 25% 30%);
+    color: #fff;
+}
+
+.custom-confirm-cancel {
+    background-color: hwb(6 21% 16%);
+    color: #fff;
+    margin-left: 10px;
+}
+
+
+/* parte del modal de editar  */
+
+/* .modal-containers{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+.modals{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+.modal-content{
+    background: white;
+    margin: 5% auto;
+    padding: 2.5rem;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: o 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+
+}
+
+.modal-closes {
+    /* transform: translateY(-200%); */
+    /* transform: translateY(-200%); */
+
+    transform: translateY(-50px);
+    opacity: 0;
+
+}
+
+.cerrar{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: #c44a4a;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+

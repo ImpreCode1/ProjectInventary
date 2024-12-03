@@ -1,0 +1,237 @@
+:root {
+  --color-primario: #4a90e2;
+  --color-secundario: #50c878;
+  --color-panel-lateral: #ffffff;
+  --color-texto: #333333;
+  --color-texto-menu: #666666;
+  --color-menu-hover: #f0f0f0;
+  --color-menu-activo: #e6f2ff;
+  --color-separador: #e0e0e0;
+  --ancho-panel: 280px;
+  --ancho-panel-compacto: 80px;
+  --transicion: 0.3s ease;
+}
+
+.tema-oscuro {
+   --color-panel-lateral: #2c2c2c;
+   --color-texto: #ffffff;
+   --color-texto-menu: #b0b0b0;
+   --color-menu-hover: #3a3a3a;
+   --color-menu-activo: #4a4a4a;
+   --color-separador: #404040;
+}
+
+.panel-lateral {
+   position: fixed;
+   width: var(--ancho-panel);
+   height: 100%;
+   background-color: var(--color-panel-lateral);
+   padding: 20px 15px;
+   overflow: hidden;
+   transition: width var(--transicion);
+   overflow-y: auto;
+   box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.panel-compacto {
+   width: var(--ancho-panel-compacto);
+}
+
+.titulo-panel {
+   margin-bottom: 30px;
+   display: flex;
+   align-items: center;
+}
+
+.titulo-panel ion-icon {
+   color: var(--color-primario);
+   font-size: 28px;
+   cursor: pointer;
+}
+
+.titulo-panel .etiqueta-menu {
+   font-size: 24px;
+   font-weight: bold;
+   margin-left: 15px;
+   color: var(--color-texto);
+}
+
+.menu-navegacion ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.menu-navegacion .enlace-nav {
+   display: flex;
+   align-items: center;
+   padding: 12px 15px;
+   color: var(--color-texto-menu);
+   text-decoration: none;
+   border-radius: 8px;
+   transition: background-color var(--transicion);
+}
+
+.menu-navegacion .enlace-nav:hover,
+.menu-navegacion .enlace-nav.activo {
+   background-color: var(--color-menu-hover);
+   color: var(--color-primario)
+}
+
+.menu-navegacion ion-icon {
+   font-size: 22px;
+   margin-right: 15px;
+}
+
+.separador {
+   height: 1px;
+   background-color: var(--color-separador);
+   margin: 20px 0;
+}
+
+.selector-tema {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.info-tema {
+   display: flex;
+   align-items: center;
+}
+
+.info-tema ion-icon {
+   font-size: 22px;
+   margin-right: 15px;
+   color: var(--color-texto-menu);
+}
+
+.toggle-base {
+  width: 35px;
+  height: 20px;
+  background-color: hwb(120 44% 5%);
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color var(--transicion);
+}
+
+.toggle-circulo {
+   width: 18px;
+   height: 90%;
+   background-color: white;
+   border-radius: 50%;
+   position: absolute;
+   /* top: 2px; */
+   left: 2px;
+   transition: transform var(--transicion);
+}
+
+.toggle-circulo.activo {
+    left: 15px;
+}
+
+.info-usuario {
+   display: flex;
+   align-items: center;
+   margin-top: 30px;
+}
+
+.info-usuario img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.detalles-usuario {
+   margin-left: 15px;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+}
+
+.nombre {
+   font-weight: bold;
+   color: var(--color-texto);
+}
+
+.correo .nombre{
+   font-size: 13px;
+}
+
+.boton-salir {
+   margin-top: 30px;
+}
+
+.enlace-salir {
+   display: flex;
+   align-items: center;
+   color: var(--color-texto-menu);
+   text-decoration: none;
+   padding: 12px 15px;
+   border-radius: 8px;
+   transition: background-color var(--transicion);
+}
+
+.enlace-salir:hover {
+   background-color: var(--color-menu-hover);
+   color: #ff4757;
+}
+
+.enlace-salir ion-icon {
+   font-size: 22px;
+   margin-right: 15px;
+}
+
+/* Estilos para panel compacto */
+.panel-compacto .etiqueta-menu,
+.panel-compacto .detalles-usuario,
+.panel-compacto .info-tema span {
+   display: none;
+}
+
+.panel-compacto .menu-navegacion .enlace-nav,
+.panel-compacto .enlace-salir {
+   justify-content: center;
+   padding: 12px 0;
+}
+
+.panel-compacto .menu-navegacion ion-icon,
+.panel-compacto .enlace-salir ion-icon {
+   margin-right: 0;
+}
+
+.panel-compacto .selector-tema {
+   justify-content: center;
+}
+
+.panel-compacto .info-tema {
+   display: none;
+}
+
+.panel-compacto .toggle-base {
+   margin: 0 auto;
+}
+
+/* Ajustes adicionales */
+.contenido-principal {
+   margin-left: var(--ancho-panel);
+   padding: 20px;
+   transition: margin-left 0.5s ease;
+}
+
+.contenido-expandido {
+   margin-left: var(--ancho-panel-compacto);
+}
+
+.nombre-correo{
+  display: flex;
+  flex-direction: column;
+}
+
+/* .ion-icon {
+  min-width: 50px;
+  font-size: 40px;
+  cursor: pointer;
+} */
