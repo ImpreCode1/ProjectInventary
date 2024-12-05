@@ -195,11 +195,13 @@ class ProductoController extends Controller
                 'idMovimientoProducto' => $movimiento->id,
                 'mensaje' => $request->mensaje,
                 'vicepresidencia' => $request->vicepresidencia,
+                'direccion' => $request->direccion,
+                'departamento' =>$request->departamento,
                 'observaciones' => $request->observaciones,
             ]);
 
-        
-            
+
+
             // $producto->decrement('cantidad', $request->cantidadUsada);
 
             if($producto->UnidadMedida->es_compuesta){
@@ -207,7 +209,7 @@ class ProductoController extends Controller
                 if($producto->cantidad_unidad_compuesta > 0){
                     $unidadesCompletasUsadas = floor($cantidadUsada / $producto->cantidad_unidad_compuesta);
                     $producto->decrement('cantidad', $unidadesCompletasUsadas);
-     
+
                     $remanente = $cantidadUsada % $producto->cantidad_unidad_compuesta;
                     if ($remanente > 0) {
                         $nuevaCantidadUnidadCompuesta = $producto->cantidad_unidad_compuesta - $remanente;
@@ -229,7 +231,7 @@ class ProductoController extends Controller
 
                 // $nuevaCantidadTotal = $producto->cantidad * ($producto->cantidad_unidad_compuesta ?: 1);
                 $producto->update(['cantidad_total' => $nuevaCantidadTotal]);
-             
+
             }else{
                 $producto->decrement('cantidad', $cantidadUsada);
                 $producto->decrement('cantidad_total', $cantidadUsada);
@@ -384,7 +386,7 @@ class ProductoController extends Controller
 
                // Encabezados
             $output .= '<tr>';
-            $headers = ['Producto', 'Usuario', 'Departamento', 'Cantidad utilizada', 'Fecha'];
+            $headers = ['Producto', 'Usuario', 'Vicepresidencia', 'Direccion', 'Departamento', 'Cantidad utilizada', 'Fecha'];
             foreach ($headers as $header) {
               $output .= "<th>{$header}</th>";
             }
@@ -397,7 +399,10 @@ class ProductoController extends Controller
                 $output .= '<tr>';
                 $output .= '<td>' . ($movimiento->producto ? htmlspecialchars($movimiento->producto->nombre) : 'Producto no disponible') . '</td>';
                 $output .= '<td>' . ($movimiento->usuario ? htmlspecialchars($movimiento->usuario->nombres . ' ' . $movimiento->usuario->apellidos) : 'Usuario no disponible') . '</td>';
-                $output .= '<td>' . htmlspecialchars($movimiento->infoMovimiento->vicepresidencia) . '</td>';    
+                $output .= '<td>' . htmlspecialchars($movimiento->infoMovimiento->vicepresidencia) . '</td>';
+                $output .= '<td>' . htmlspecialchars($movimiento->infoMovimiento->direccion) . '</td>';
+                $output .= '<td>' . htmlspecialchars($movimiento->infoMovimiento->departamento) . '</td>';
+
 
                 // if (isset($movimiento->producto) && isset($movimiento->producto->unidadMedida)) {
                 //     $cantidadFormateada = $this->formatCantidad($movimiento->cantidadUsada);
@@ -422,10 +427,10 @@ class ProductoController extends Controller
                     $cantidadFormateada = $this->formatCantidad($movimiento->cantidadUsada);
                     $output .= '<td>' . htmlspecialchars($cantidadFormateada . ' ' . $unidadMedida) . '</td>';
                 }
-    
+
                 $output .= '<td>' . htmlspecialchars($movimiento->fecha) . '</td>';
                 $output .= '</tr>';
-                
+
             }
 
         $output .= '</table></body></html>';

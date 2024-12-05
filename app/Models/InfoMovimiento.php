@@ -11,7 +11,7 @@ class InfoMovimiento extends Model
     protected $table = 'infomovimientos';
 
 
-    protected $fillable = ['mensaje', 'vicepresidencia','observaciones','idMovimientoProducto'];
+    protected $fillable = ['mensaje', 'vicepresidencia','direccion','departamento','observaciones','idMovimientoProducto'];
 
     public function movimientoProducto()
     {

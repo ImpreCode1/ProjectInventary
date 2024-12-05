@@ -65,6 +65,8 @@
                                         <tr>
                                             <th>Producto</th>
                                             <th>Usuario</th>
+                                            <th>Vicepresidencia</th>
+                                            <th>Dirección</th>
                                             <th>Departamento</th>
                                             <th>Cantidad utilizada</th>
                                             <th>Fecha</th>
@@ -99,29 +101,32 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ $movimiento->infoMovimiento->vicepresidencia }}</td>
+                                                <td>{{ $movimiento->infoMovimiento->direccion }}</td>
+                                                <td>{{ $movimiento->infoMovimiento->departamento }}</td>
+
                                                 <td>
-                                                    {{-- @if ($movimiento->producto && $movimiento->producto->unidadMedida)
-                                                        <span class="cantidad-usada">
-                                                            @if ($movimiento->producto->unidadMedida->es_compuesta)
-                                                                {{formatNumber($movimiento->cantidadUsada) }} unidades
-                                                            @elseif ($movimiento->producto->unidadMedida->es_compuesta === null)
-                                                                {{formatNumber($movimiento->cantidadUsada) }} {{$movimiento->producto->unidadMedida->nombre}}   
+
+                                                    @if (optional($movimiento->producto)->unidadMedida)
+
+                                                        @if (optional($movimiento->producto->unidadMedida)->es_compuesta)
+
+                                                            @if ($movimiento->producto->cantidad_unidad_compuesta !== null)
+                                                                {{ formatNumber($movimiento->cantidadUsada) }}
+                                                                unidad{{ $movimiento->cantidadUsada > 1 ? 'es' : '' }}
                                                             @else
-                                                                {{formatNumber($movimiento->cantidadUsada) }} {{$movimiento->producto->unidadMedida->nombre}}
+                                                                {{ formatNumber($movimiento->cantidadUsada) }}
+                                                                {{ optional($movimiento->producto->unidadMedida)->nombre }}
                                                             @endif
-                                                        </span>
-                                                    @else
-                                                        <span class="text-muted">Cantidad no disponible</span>
-                                                    @endif --}}
-                                                    @if($movimiento->producto->unidadMedida->es_compuesta)
-                                                        @if ($movimiento->producto->cantidad_unidad_compuesta !== null)
-                                                            {{formatNumber($movimiento->cantidadUsada) }} unidad{{$movimiento->cantidadUsada > 1 ? 'es' : ''}}
                                                         @else
-                                                            {{formatNumber($movimiento->cantidadUsada)}} {{$movimiento->producto->unidadMedida->nombre}}
+
+                                                            {{ formatNumber($movimiento->cantidadUsada) }}
+                                                            {{ optional($movimiento->producto->unidadMedida)->nombre }}
                                                         @endif
                                                     @else
-                                                        {{formatNumber($movimiento->cantidadUsada) }} {{$movimiento->producto->unidadMedida->nombre}}
+
+                                                        <span class="text-muted">Cantidad no disponible</span>
                                                     @endif
+
                                                 </td>
                                                 <td>{{ $movimiento->fecha }}</td>
                                                 <td>
@@ -158,14 +163,14 @@
 
 
     {{-- validacion reporte --}}
-    {{-- 
+    {{--
     <div id="custom-alert-bg" class="custom-alert-bg"></div>
     <div id="custom-alert" class="custom-alert">
         <div class="custom-alert-content">
             <div class="custom-alert-header">
                 <img src="https://cdn-icons-png.freepik.com/256/12176/12176941.png?semt=ais_hybrid" alt="Icon">
             </div>
-          
+
             <p>¿Estás seguro de que deseas descargarlo?</p>
             <div class="custom-alert-buttons">
                 <button id="custom-confirm-yes" class="custom-confirm-yes">Sí, Descargar</button>

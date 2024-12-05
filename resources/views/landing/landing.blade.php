@@ -163,14 +163,12 @@
         <div class="footer-content">
             <div>
                 <p class="footer-text">
-                    &copy; 2024 <span class="footer-logo">Impresistem</span>
+                    &copy; 2025 <span class="footer-logo">Impresistem</span>
                 </p>
                 <p class="footer-text">
                     Reservados todos los derechos.
                 </p>
-                <p class="footer-text">
-                    Diseñado y desarrollado por <span class="designer-name">Kevin Jhoe Gomez</span>
-                </p>
+
             </div>
         </div>
     </footer>
@@ -203,7 +201,7 @@
         });
 
 
-        // validacion 
+        // validacion
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('form');
             const customAlertBg = document.getElementById('custom-alert-bg');
@@ -226,12 +224,12 @@
                 customAlert.style.display = 'none';
             });
 
-            
+
             // @if (session('success'))
             //     Swal.fire({
             //        position: "top-end",
             //        icon: "success",
-            //        text: '{{ session('success') }}', 
+            //        text: '{{ session('success') }}',
             //        showConfirmButton: false,
             //        timer: 1500
             //      });
