@@ -98,6 +98,15 @@
                 </div>
             </div>
 
+            <div id="cantidad_base_container"
+                style="display: {{ $productoEditar->unidadMedida->es_compuesta ? 'block' : 'none' }};">
+                <div class="form-group">
+                    <label for="cantidad_unidad_compuesta">Unidades</label>
+                    <input type="number" step="1" id="cantidad_unidad_compuesta" name="cantidad_unidad_compuesta"
+                        class="form-control" placeholder="Unidades"
+                        value="{{ intval($productoEditar->cantidad_unidad_compuesta ?? 0) }}">
+                </div>
+            </div>
             <div class="form-group">
                 <input type="file" id="image-inputs" name="imagen" accept="image/*" style="display: none;">
                 <label for="image-inputs"
@@ -108,10 +117,8 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="cantidad_total">Cantidad Total</label>
-            <input type="text" id="cantidad_total" name="cantidad_total" value="0" readonly>
-        </div>
+
+
         <button class="buttons" type="submit"
             style="background-color: #007bff; color: white; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer; padding: 14px; width: 100%; transition: background-color 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 2px;">
             <span>Guardar Cambios</span>
