@@ -6,7 +6,7 @@
     <link rel="icon" href="/assets/Recursos/icoprin.ico">
 
     <div id="dynamic-content">
-   
+
         <link rel="stylesheet" href="/assets/css/stock.css">
         <link href="https://cdn.datatables.net/v/bs5/dt-1.13.4/r-2.4.1/datatables.min.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,7 +72,9 @@
                                                         <td>{{ formatNumber($prostock->cantidad) }}
                                                         {{ $prostock->UnidadMedida->nombre }}
                                                 @endif
-                                                <td>{{ $prostock->updated_at }}</td>
+                                                {{-- <td>{{ $prostock->updated_at }}</td> --}}
+                                                <td>{{ $prostock->updated_at->format('Y-m-d') }}</td>
+
                                              </tr>
                                         @endforeach
                                     </tbody>

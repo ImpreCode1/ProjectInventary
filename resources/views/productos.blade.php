@@ -127,13 +127,13 @@
                                 <div class="quantity-control" style="display: flex; gap: 10px;">
                                     <div style="flex: 1;">
                                         <input type="number" step="any" name="cantidad_minima" id="cantidad_minima"
-                                            placeholder="Cantidad mínima" 
+                                            placeholder="Cantidad mínima"
                                             value="{{ old('cantidad_minima', isset($producto) ? formatNumber($producto->cantidad_minima) : '') }}"
                                             style="width: 100%; padding: 10px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 1rem;"
                                             required>
                                     </div>
 
-                                    
+
                                     <div style="flex: 1;" id="cantidad_base_container" style="display: none;">
                                         <input type="number" step="any" id="cantidad_unidad_compuesta"
                                             name="cantidad_unidad_compuesta" placeholder="Unidades"
@@ -143,9 +143,9 @@
 
                                 </div>
                                 {{-- <div style="margin-top: 10px;">
-                                  
-                                
-                                    
+
+
+
                                 </div> --}}
                                 <br>
                                 <div style="flex: 1;">
@@ -304,7 +304,7 @@
                                     </form>
 
                                     {{-- <form method="POST" action="" class="btn-editar"> --}}
-                                    {{-- 
+                                    {{--
                             <a href="{{ route('producto.edit', $producto->id) }}" type="submit"
                                 class="addtocart-btn">Modificar</a> --}}
 

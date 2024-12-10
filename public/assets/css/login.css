@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+
+    /* :root{
+        color: #fedc63;
+        color: #0f4c81;
+        color: #11548f;
+        color: #197acf;
+        color: #b66b13;
+        color: #e5af2f;
+        color: #fbce43;
+        color: #fedc63;
+    } */
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -14,7 +26,7 @@
 
     .left {
       flex: 1;
-      background: url("https://img.freepik.com/vector-gratis/cinta-transportadora-ilustracion-concepto-almacen_114360-15026.jpg?w=740&t=st=1726168401~exp=1726169001~hmac=db49527953ee87d7f23e98d486fc894e6053626ddbae9f7c17f9dfb51d108f13") no-repeat center center;
+      background: url("https://images.pexels.com/photos/1833306/pexels-photo-1833306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") no-repeat center center;
       background-size: cover;
     }
 
@@ -35,7 +47,7 @@
 
     h1 {
       text-align: center;
-      color: #6b21a8;
+      color: #0f4c81;
       margin-bottom: 20px;
     }
 
@@ -60,7 +72,7 @@
     }
 
     button[type="submit"] {
-      background-color: #6b21a8;
+      background-color: #197acf;
       color: #fff;
       padding: 14px 20px;
       border: none;
@@ -71,7 +83,7 @@
     }
 
     button[type="submit"]:hover {
-      background-color: #4c1475;
+      background-color: #11548f;
     }
 
     .create-account {
@@ -96,9 +108,9 @@
       left: 0;
       color:#da2b2b;
       max-width:250
-  
+
     }
-  
+
     /* .form-d{
       position: absolute;
       bottom: -29px;

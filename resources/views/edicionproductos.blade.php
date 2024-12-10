@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  
+
 
 
     <form id="editProductForm" method="POST" action="{{ route('producto.update', $productoEditar->id) }}"
@@ -108,6 +108,10 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="cantidad_total">Cantidad Total</label>
+            <input type="text" id="cantidad_total" name="cantidad_total" value="0" readonly>
+        </div>
         <button class="buttons" type="submit"
             style="background-color: #007bff; color: white; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer; padding: 14px; width: 100%; transition: background-color 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 2px;">
             <span>Guardar Cambios</span>
@@ -116,6 +120,51 @@
     </form>
 
     <script>
+        $(document).ready(function() {
+
+            function handleUnitSelection() {
+                $('#unidad_medida_id').on('change', function() {
+                    var selectedOption = $(this).find('option:selected');
+                    var esCompuesta = selectedOption.data('es-compuesta');
+                    var cantidadBase = selectedOption.data('cantidad-base');
+
+
+                    if (esCompuesta) {
+                        $('#cantidad_base_container').show();
+                    } else {
+                        $('#cantidad_base_container').hide();
+                        $('#cantidad_unidad_compuesta').val('');
+                    }
+
+
+                    calculateTotalQuantity();
+                });
+
+
+                $('#cantidad, #cantidad_unidad_compuesta').on('input', calculateTotalQuantity);
+
+                function calculateTotalQuantity() {
+                    var cantidad = parseFloat($('#cantidad').val()) || 0;
+                    var unidadMedidaId = $('#unidad_medida_id').val();
+                    var selectedOption = $('#unidad_medida_id option:selected');
+                    var esCompuesta = selectedOption.data('es-compuesta');
+                    var cantidadBase = selectedOption.data('cantidad-base');
+
+                    var totalQuantity = cantidad;
+
+                    if (esCompuesta) {
+                        var unidadesCompuestas = parseFloat($('#cantidad_unidad_compuesta').val()) || 0;
+                        totalQuantity = cantidad * cantidadBase + unidadesCompuestas;
+                    }
+
+                    $('#cantidad_total').val(totalQuantity.toFixed(2));
+                }
+            }
+
+
+            handleUnitSelection();
+        });
+
         $(document).ready(function() {
             $(document).on('change', '#image-inputs', function(e) {
                 if (e.target.files && e.target.files[0]) {
@@ -147,7 +196,7 @@
             });
         });
     </script>
- 
+
 </body>
 
 </html>
