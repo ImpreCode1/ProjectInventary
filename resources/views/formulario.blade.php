@@ -76,34 +76,15 @@
                 <input type="text" id="mensaje" name="mensaje">
             </div>
             <div class="form-group">
-                <select type="text" name="vicepresidencia" required>
-                    <option value="" disabled selected>Seleccione Vicepresidencia</option>
-                    <option value="Tecnologia">Tecnologia</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Operaciones">Operaciones</option>
-                    <option value="Recursos Humano">Recursos Humano</option>
-                    <option value="Comercial">Comercial</option>
-                </select>
+                <input type="text" name="vicepresidencia" required placeholder="Ingrese Vicepresidencia">
             </div>
+
             <div class="form-group">
-                <select type="text" name="direccion" required>
-                    <option value="" disabled selected>Seleccione Dirección</option>
-                    <option value="IT">Dirección de IT </option>
-                    <option value="Finanzas">Dirección de Finanzas Corporativas</option>
-                    <option value="Marketing">Dirección de Marketing y Ventas</option>
-                    <option value="Logística">Dirección de Logística y Distribución</option>
-                    <option value="Servicios al Cliente">Dirección de Servicios al Cliente</option>
-                </select>
+                <input type="text" name="direccion" required placeholder="Ingrese Dirección">
             </div>
+
             <div class="form-group">
-                <select type="text" name="departamento" required>
-                    <option value="" disabled selected>Seleccione Departamento</option>
-                    <option value="Contabilidad">Contabilidad</option>
-                    <option value="Recursos Humanos">Recursos Humanos</option>
-                    <option value="Ventas y Marketing">Ventas y Marketing</option>
-                    <option value="Operaciones">Operaciones</option>
-                    <option value="Legal">Legal</option>
-                </select>
+                <input type="text" name="departamento" required placeholder="Ingrese Departamento">
             </div>
             <div class="form-group">
                 <label for="observaciones">
